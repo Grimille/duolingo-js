@@ -1,0 +1,24 @@
+{
+  "name": "duolingo-js",
+  "version": "0.0.1",
+  "description": "Use the Duolingo API and power up your Node.js application (non-official)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grimille/duolingo-js.git"
+  },
+  "keywords": [
+    "duolingo",
+    "node",
+    "api"
+  ],
+  "author": "Mickaël Dhainaut",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Grimille/duolingo-js/issues"
+  },
+  "homepage": "https://github.com/Grimille/duolingo-js#readme"
+}
