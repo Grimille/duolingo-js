@@ -13,7 +13,7 @@ npm install @grimille/duolingo-js
 ## Usage
 
 ```javascript
-const Duolingo  = require('@grimille/duolingo-js/src/duolingo');
+const { Duolingo }  = require('@grimille/duolingo-js');
 
 const client = new Duolingo(<username|email>, <password>);
 
