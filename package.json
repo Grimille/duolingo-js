@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "app": "node src/index.js",
-    "publish": "npm publish --tag alpha"
+    "app": "node src/index.js"
   },
   "type": "commonjs",
   "repository": {
