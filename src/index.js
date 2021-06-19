@@ -8,5 +8,10 @@ const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLING
 
 (async () => {
     await client.login();
+    
+    const grimille = await client.getUserData("Grimille");
+    const aleroyke = await client.getUserData('aleroyke');
+
+    console.log(aleroyke);
 })();
 

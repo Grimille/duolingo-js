@@ -1,5 +1,5 @@
 const requester = require('../src/requester');
-const { getLoginURL } = require('../src/urls');
+const { getLoginURL, getUserURL} = require('../src/urls');
 
 class Duolingo {
     constructor(identifier, password) {
@@ -25,6 +25,11 @@ class Duolingo {
         }
 
         return this.jwt !== null;
+    }
+
+    async getUserData(user) {
+        return await requester.send(getUserURL(user))
+            .then(response => response.json());
     }
 }
 
