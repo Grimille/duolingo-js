@@ -1,5 +1,5 @@
 const requester = require('../src/requester');
-const { LOGIN_URL } = require('../src/urls');
+const { getLoginURL } = require('../src/urls');
 
 class Duolingo {
     constructor(identifier, password) {
@@ -12,7 +12,7 @@ class Duolingo {
         console.log('Login into Duolingo using credentials...');
 
         if(this.jwt === null) {
-            await requester.send(LOGIN_URL, {
+            await requester.send(getLoginURL(), {
                 identifier: this.identifier,
                 password: this.password
             }).then(response => {
