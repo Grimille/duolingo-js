@@ -9,8 +9,6 @@ class Duolingo {
     }
 
     async login() {
-        console.log('Login into Duolingo using credentials...');
-
         if(this.jwt === null) {
             await requester.send(getLoginURL(), {
                 identifier: this.identifier,
