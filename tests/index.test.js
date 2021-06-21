@@ -12,9 +12,3 @@ test('duolingo.existToken', () => {
     expect(tokenFileExist('tests/duolingo/test.json')).toBe(false);
     expect(tokenFileExist('tests/duolingo/token.json')).toBe(true);
 });
-
-test('duolingo.readToken', () => {
-    const token = readTokenFromFile('tests/duolingo/token.json');
-
-    expect(token).toMatch('');
-});
