@@ -1,6 +1,6 @@
 {
   "name": "@grimille/duolingo-js",
-  "version": "0.1.5",
+  "version": "0.3.1",
   "description": "Use the Duolingo API and power up your Node.js application (non-official)",
   "main": "src/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
+    "fs-extra": "^10.0.0",
     "node-fetch": "^2.6.1"
   }
 }
