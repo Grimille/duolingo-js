@@ -72,7 +72,7 @@ class Duolingo {
      * @returns - An object containing all the datas
      */
     async getUserData(user) {
-        return await requester.send(getUserURL(user))
+        return await requester.send(getUserURL(user), null, this.jwt)
             .then(response => response.json());
     }
 }
