@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36';
+const USER_AGENT = 'Chrome/83.0.4103.116';
 
 const send = async (url, data, jwt) => {
     return fetch(url, {
