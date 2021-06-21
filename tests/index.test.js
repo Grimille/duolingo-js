@@ -1,11 +1,14 @@
 const { Duolingo } = require('../src/index');
-const { readTokenFromFile, tokenFileExist } = require('../src/token');
+const { tokenFileExist } = require('../src/token');
+
+jest.setTimeout(10000);
 
 test('duolingo.login', async () => {
-    const client = new Duolingo('RandomUser978392023ab2', 'RandomPassword93827475827ab3');
+    // -- Test with real credentials -- //
+    const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLINGO_PASSWORD);
     const loggedIn = await client.login();
 
-    expect(loggedIn).toBe(false);
+    expect(loggedIn).toBe(true);
 });
 
 test('duolingo.existToken', () => {
