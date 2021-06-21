@@ -1,9 +1,13 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 
 exports.tokenFileExist = (tokenFile) => {
     return fs.existsSync(tokenFile);
 }
 
 exports.readTokenFromFile = (tokenFile) => {
-    return fs.readFileSync(tokenFile, 'utf8');
+    return fs.readJSONSync(tokenFile);
+}
+
+exports.writeTokenToFile = (tokenFile, jwt) => {
+    fs.outputJSONSync(tokenFile, jwt);
 }
