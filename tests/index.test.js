@@ -15,3 +15,12 @@ test('duolingo.existToken', () => {
     expect(tokenFileExist('tests/duolingo/test.json')).toBe(false);
     expect(tokenFileExist('tests/duolingo/token.json')).toBe(true);
 });
+
+test('duolingo.getUserdata', async() => {
+    const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLINGO_PASSWORD);
+    const loggedIn = await client.login();
+    const data = await client.getUserData('Grimille');
+
+    expect(loggedIn).toBe(true);
+    expect(data.users).not.toBeUndefined();
+})
