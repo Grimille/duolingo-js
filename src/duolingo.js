@@ -104,13 +104,7 @@ class Duolingo {
     }
 
     getTotalXP() {
-        let totalXP = 0;
-
-        this.userData.courses.map(course => {
-            totalXP += course.xp;
-        })
-
-        return totalXP;
+        return this.userData.totalXp;
     }
 }
 

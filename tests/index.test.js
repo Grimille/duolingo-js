@@ -26,10 +26,15 @@ test('duolingo.getUserdata', async() => {
 
 test('duolingo.tests', async() => {
     const loggedIn = await client.login();
-    const xpGoal = client.getXpGoal();
-    const totalXP = client.getTotalXP();
+    let xpGoal = client.getXpGoal();
+    let totalXP = client.getTotalXP();
 
     expect(loggedIn).toBe(true);
-    expect(xpGoal).toEqual(10);
+    expect(totalXP).toBeGreaterThanOrEqual(0);
+
+    await client.setUser('Alpha268145');
+    totalXP = client.getTotalXP();
+
+    console.log(totalXP);
     expect(totalXP).toBeGreaterThanOrEqual(0);
 });
