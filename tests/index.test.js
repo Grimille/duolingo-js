@@ -22,4 +22,14 @@ test('duolingo.getUserdata', async() => {
 
     expect(loggedIn).toBe(true);
     expect(data.users).not.toBeUndefined();
-})
+});
+
+test('duolingo.tests', async() => {
+    const loggedIn = await client.login();
+    const xpGoal = client.getXpGoal();
+    const totalXP = client.getTotalXP();
+
+    expect(loggedIn).toBe(true);
+    expect(xpGoal).toEqual(10);
+    expect(totalXP).toBeGreaterThanOrEqual(0);
+});
