@@ -106,6 +106,10 @@ class Duolingo {
     getTotalXP() {
         return this.userData.totalXp;
     }
+
+    getStreak() {
+        return this.userData.streak;
+    }
 }
 
 module.exports = Duolingo;
