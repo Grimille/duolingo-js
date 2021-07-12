@@ -13,6 +13,7 @@ class Duolingo {
         this.identifier = identifier;
         this.password = password;
         this.jwt = this.recoverJWT();
+        this.userData = null;
     }
 
     /**
@@ -63,7 +64,17 @@ class Duolingo {
             }
         }
 
+        await this.loadSelfUserData();
+
         return this.jwt !== null;
+    }
+
+    /**
+     * Get the userdata for the current user
+     * @returns - The self user data
+     */
+    async loadSelfUserData() {
+        await this.setUser(this.identifier);
     }
 
     /**
@@ -73,7 +84,33 @@ class Duolingo {
      */
     async getUserData(user) {
         return await requester.send(getUserURL(user), null, this.jwt)
-            .then(response => response.json());
+            .then(response => response.json())
+    }
+
+    /**
+     * Set the current user by querying his data
+     * @param {*} user - String 
+     * @returns 
+     */
+    async setUser(user) {
+        await requester.send(getUserURL(user), null, this.jwt)
+            .then(response => response.json())
+            .then(data => this.userData = data.users[0])
+            .catch(error => console.error(error))
+    }
+
+    getXpGoal() {
+        return this.userData.xpGoal;
+    }
+
+    getTotalXP() {
+        let totalXP = 0;
+
+        this.userData.courses.map(course => {
+            totalXP += course.xp;
+        })
+
+        return totalXP;
     }
 }
 
