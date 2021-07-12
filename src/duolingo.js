@@ -110,6 +110,14 @@ class Duolingo {
     getStreak() {
         return this.userData.streak;
     }
+
+    getUsername() {
+        return this.userData.username;
+    }
+
+    getDisplayName() {
+        return this.userData.name;
+    }
 }
 
 module.exports = Duolingo;
