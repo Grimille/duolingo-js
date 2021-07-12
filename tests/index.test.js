@@ -29,10 +29,12 @@ test('duolingo.tests', async() => {
 
     let totalXP = client.getTotalXP();
     let streak = client.getStreak();
+    let premium = client.isPremium();
 
     expect(loggedIn).toBe(true);
     expect(totalXP).toBeGreaterThanOrEqual(0);
     expect(streak).toBeGreaterThanOrEqual(0);
+    expect(premium).toBe(false);
 
     await client.setUser('Alpha268145');
     totalXP = client.getTotalXP();

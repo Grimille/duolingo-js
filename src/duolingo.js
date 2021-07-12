@@ -118,6 +118,10 @@ class Duolingo {
     getDisplayName() {
         return this.userData.name;
     }
+
+    isPremium() {
+        return this.userData.hasPlus;
+    }
 }
 
 module.exports = Duolingo;
