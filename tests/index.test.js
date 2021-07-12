@@ -1,11 +1,11 @@
 const { Duolingo } = require('../src/index');
 const { tokenFileExist } = require('../src/token');
+const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLINGO_PASSWORD);
 
 jest.setTimeout(10000);
 
 test('duolingo.login', async () => {
     // -- Test with real credentials -- //
-    const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLINGO_PASSWORD);
     const loggedIn = await client.login();
 
     expect(loggedIn).toBe(true);
@@ -17,7 +17,6 @@ test('duolingo.existToken', () => {
 });
 
 test('duolingo.getUserdata', async() => {
-    const client = new Duolingo(process.env.DUOLINGO_IDENTIFIER, process.env.DUOLINGO_PASSWORD);
     const loggedIn = await client.login();
     const data = await client.getUserData('Grimille');
 
