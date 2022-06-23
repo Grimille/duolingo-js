@@ -51,6 +51,21 @@ And use async IFEE :
 - getUsername() - Get the username
 - getDisplayName() - Get the display name
 - isPremium() - Get if the user is premium (Duolingo Plus) or not.
+- getId() - Get the id
+- getProfileCountry() - Get the country code
+- getCourses() - Get the courses
+```
+[{ preload: false,
+    placementTestAvailable: false,
+    authorId: 'duolingo',
+    title: 'Spanisch',
+    learningLanguage: 'es',
+    xp: 18685,
+    healthEnabled: true,
+    fromLanguage: 'de',
+    crowns: 80,
+    id: 'DUOLINGO_ES_DE' }]
+```
 ## Todos
 
 - Implement new API calls (Buy a freeze… 👀)

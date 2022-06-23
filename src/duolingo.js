@@ -122,6 +122,19 @@ class Duolingo {
     isPremium() {
         return this.userData.hasPlus;
     }
+
+
+    getId() {
+        return this.userData.id;
+    }
+
+    getProfileCountry() {
+        return this.userData.profileCountry;
+    }
+
+    getCourses() {
+        return this.userData.courses;
+    }
 }
 
 module.exports = Duolingo;
