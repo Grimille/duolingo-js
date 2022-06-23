@@ -55,6 +55,7 @@ And use async IFEE :
 - getProfileCountry() - Get the country code
 - getCourses() - Get the courses
 ```
+# Sample Response
 [{ preload: false,
     placementTestAvailable: false,
     authorId: 'duolingo',
@@ -66,6 +67,23 @@ And use async IFEE :
     crowns: 80,
     id: 'DUOLINGO_ES_DE' }]
 ```
+- getFriends() - Get the users friends
+```
+# Sample Response
+{ nextCursor: null,
+  totalSubscriptions: 1,
+  subscriptions:
+   [ { username: 'XXX',
+       picture: '//simg-ssl.duolingo.com/avatar/default_2',
+       name: 'Vroni',
+       monthlyXp: 3527,
+       weeklyXp: 811,
+       hasRecentActivity15: false,
+       totalXp: 7318,
+       id: XXX,
+       hasPlus: false } ] }
+```
+
 ## Todos
 
 - Implement new API calls (Buy a freeze… 👀)

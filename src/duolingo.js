@@ -1,5 +1,5 @@
 const requester = require('../src/requester');
-const { getLoginURL, getUserURL, getShopURL } = require('../src/urls');
+const { getLoginURL, getUserURL, getShopURL, getFriendsURL } = require('../src/urls');
 const { readTokenFromFile, writeTokenToFile, tokenFileExist } = require('../src/token');
 
 const TOKEN_FILE = 'duolingo-js/token.json';
@@ -134,6 +134,12 @@ class Duolingo {
 
     getCourses() {
         return this.userData.courses;
+    }
+
+    async getFriends() {
+        return await requester.send(getFriendsURL(this.getId()), null, this.jwt)
+            .then(response => response.json())
+            .catch(error => console.error(error));
     }
 }
 
